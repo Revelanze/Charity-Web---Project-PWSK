@@ -1,0 +1,19 @@
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; }
+
+/* Layout */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #fff; padding: 15px 10%; border-bottom: 2px solid #ddd;
+}
+.logo { font-size: 24px; font-weight: bold; color: #2c3e50; }
+.logo span { color: #8e44ad; } /* Lavender color for cancer awareness */
+
+.nav-menu { display: flex; list-style: none; gap: 20px; }
+.nav-menu a { text-decoration: none; color: #555; font-weight: 600; cursor: pointer; }
+.nav-menu a.active, .nav-menu a:hover { color: #8e44ad; border-bottom: 2px solid #8e44ad; }
+
+/* Pages Visibility */
+.page-section { display: none; padding: 50px 10%; min-height: 80vh; }
+.page-section.active { display: block; }
