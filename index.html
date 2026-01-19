@@ -2,130 +2,130 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>CareUnity - Bersama Lawan Kanker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareUnity | Platform Donasi Kanker 2026</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="container-nav">
+    <header class="main-header">
+        <div class="nav-container">
             <div class="logo">Care<span>Unity</span></div>
             <nav>
-                <ul class="nav-links">
-                    <li><a href="#" class="menu-item active" data-page="home">Beranda</a></li>
-                    <li><a href="#" class="menu-item" data-page="donasi">Donasi</a></li>
-                    <li><a href="#" class="menu-item" data-page="relawan">Relawan</a></li>
-                    <li><a href="#" class="menu-item" data-page="admin">Admin</a></li>
+                <ul class="nav-menu">
+                    <li><button class="nav-btn active" data-target="home">Beranda</button></li>
+                    <li><button class="nav-btn" data-target="donasi">Donasi</button></li>
+                    <li><button class="nav-btn" data-target="relawan">Relawan</button></li>
+                    <li><button class="nav-btn" data-target="admin">Admin Panel</button></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section id="home-page" class="content-page active">
-            <div class="hero">
-                <div class="hero-desc">
-                    <h1>Wujudkan Harapan Bagi <br>Pasien Kanker</h1>
-                    <p>CareUnity membantu menghubungkan orang-orang baik dengan para pejuang kanker yang membutuhkan bantuan biaya pengobatan dan dukungan moral.</p>
-                    <button class="btn-primary" id="go-donasi">Bantu Sekarang</button>
+    <main class="container">
+        <section id="page-home" class="page active">
+            <div class="hero-box">
+                <div class="hero-text">
+                    <h1>Bantu Mereka <br><span class="text-teal">Melawan Kanker</span></h1>
+                    <p>Salurkan bantuan medis dan dukungan psikologis secara transparan bagi pejuang kanker di seluruh Indonesia.</p>
+                    <div class="hero-actions">
+                        <button class="btn-main" onclick="app.navigateTo('donasi')">Donasi Sekarang</button>
+                    </div>
                 </div>
-                <div class="hero-img">
-                    <img src="/image/logo/logo1.png" alt="Cancer Care">
+                <div class="hero-img-container">
+                    <img src="image/logo/logo1.png" alt="Hero Image">
                 </div>
             </div>
 
-            <div class="summary-stats">
-                <div class="stat-item"><h3>15</h3><p>Kampanye</p></div>
-                <div class="stat-item"><h3>Rp 520jt</h3><p>Terkumpul</p></div>
-                <div class="stat-item"><h3>2.1k</h3><p>Donatur</p></div>
+            <div class="section-heading">
+                <h2>Kampanye Aktif</h2>
+                <p>Klik pada kampanye untuk membantu mereka hari ini.</p>
             </div>
-
-            <h2 class="title-section">Daftar Penggalangan Dana</h2>
-            <div class="grid-campaign" id="campaign-display">
+            <div class="campaign-grid" id="campaign-list">
                 </div>
         </section>
 
-        <section id="donasi-page" class="content-page">
-            <div class="box-form">
+        <section id="page-donasi" class="page">
+            <div class="card-form">
                 <h2>Formulir Donasi</h2>
-                <form id="form-donasi-baru">
-                    <div class="form-control">
-                        <label>Nama Anda</label>
-                        <input type="text" id="donatur-nama" placeholder="Nama lengkap" required>
+                <form id="form-donasi">
+                    <div class="form-group">
+                        <label>Nama Donatur</label>
+                        <input type="text" id="d-nama" placeholder="Masukkan nama lengkap" required>
                     </div>
-                    <div class="form-control">
-                        <label>Jumlah Donasi (Rp)</label>
-                        <input type="number" id="donatur-jumlah" placeholder="Contoh: 100000" required>
+                    <div class="form-group">
+                        <label>Nominal (Rp)</label>
+                        <input type="number" id="d-jumlah" placeholder="Contoh: 50000" required>
                     </div>
-                    <div class="form-control">
-                        <label>Pilih Pembayaran</label>
-                        <select id="donatur-metode">
-                            <option value="Transfer Bank">Transfer Bank</option>
-                            <option value="E-Wallet">E-Wallet (GoPay/OVO)</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-submit">Kirim Donasi</button>
+                    <button type="submit" class="btn-submit">Kirim Donasi Aman</button>
                 </form>
             </div>
         </section>
 
-        <section id="relawan-page" class="content-page">
-            <div class="box-form">
-                <h2>Pendaftaran Relawan</h2>
-                <p style="margin-bottom: 20px; color: #666;">Silakan isi data diri Anda untuk bergabung dalam misi kemanusiaan ini.</p>
-                <form id="form-relawan-baru">
-                    <div class="row-input">
-                        <div class="form-control">
-                            <label>Nama</label>
-                            <input type="text" id="rel-nama" required>
-                        </div>
-                        <div class="form-control">
-                            <label>Email</label>
-                            <input type="email" id="rel-email" required>
-                        </div>
+        <section id="page-relawan" class="page">
+            <div class="card-form">
+                <h2>Gabung Relawan</h2>
+                <form id="form-relawan">
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" id="r-nama" required>
                     </div>
-                    <div class="form-control">
-                        <label>Bidang Minat</label>
-                        <select id="rel-bidang">
-                            <option value="Medis">Tenaga Medis/Kesehatan</option>
-                            <option value="Logistik">Logistik & Lapangan</option>
-                            <option value="Edukasi">Edukasi & Sosialisasi</option>
+                    <div class="form-group">
+                        <label>Keahlian</label>
+                        <select id="r-skill">
+                            <option value="Medis">Tenaga Medis</option>
+                            <option value="Sosial">Pendampingan Sosial</option>
+                            <option value="Dokumentasi">Dokumentasi</option>
                         </select>
                     </div>
-                    <div class="form-control">
-                        <label>Motivasi Singkat</label>
-                        <textarea id="rel-pesan" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit" style="background-color: #3498db;">Daftar Jadi Relawan</button>
+                    <button type="submit" class="btn-submit btn-teal">Daftar Sekarang</button>
                 </form>
             </div>
         </section>
 
-        <section id="admin-page" class="content-page">
-            <div class="admin-wrapper">
-                <div class="admin-top">
-                    <h2>Manajemen Kampanye</h2>
-                    <button class="btn-add" id="btn-tambah-data"> + Tambah Kampanye</button>
-                </div>
-                <table class="table-custom">
+        <section id="page-admin" class="page">
+            <div class="admin-header">
+                <h2>Manajemen Kampanye</h2>
+                <button class="btn-add" id="add-btn"> + Tambah Data</button>
+            </div>
+            <div class="admin-stats">
+                <div class="stat-item">Total: <span id="stat-count">0</span></div>
+                <div class="stat-item">Terkumpul: <span id="stat-sum">Rp 0</span></div>
+            </div>
+            <div class="table-box">
+                <table class="modern-table">
                     <thead>
                         <tr>
-                            <th>Judul Kampanye</th>
-                            <th>Target Dana</th>
+                            <th>Preview</th>
+                            <th>Judul</th>
+                            <th>Target</th>
                             <th>Terkumpul</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
-                    <tbody id="table-body-admin">
+                    <tbody id="admin-table">
                         </tbody>
                 </table>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 CareUnity - Project UAS Pengembangan Aplikasi Web</p>
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">Care<span>Unity</span></div>
+                <p>Membangun harapan sejak 2024.</p>
+            </div>
+            <div class="footer-socials">
+                <a href="#">Instagram</a>
+                <a href="#">Twitter/X</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 CareUnity. Hak Cipta Dilindungi.
+        </div>
     </footer>
 
     <script src="script.js"></script>
