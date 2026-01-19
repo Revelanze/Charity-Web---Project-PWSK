@@ -1,11 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CharityConnect - Project UAS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
+    <header>
+        <div class="navbar">
+            <div class="logo">Charity<span>Connect</span></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link active" data-target="home">Beranda</a></li>
+                    <li><a href="#" class="nav-link" data-target="donasi">Donasi</a></li>
+                    <li><a href="#" class="nav-link" data-target="relawan">Relawan</a></li>
+                    <li><a href="#" class="nav-link" data-target="admin">Dashboard Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="home" class="page-section active">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Bantu Pejuang Kanker <br>Mendapatkan Senyumnya Kembali</h1>
+                    <p>Platform penggalangan dana khusus untuk biaya medis dan pendampingan penderita kanker di Indonesia.</p>
+                    <button class="btn-main" id="start-donasi">Donasi Sekarang</button>
+                </div>
+                <div class="hero-img">
+                    <img src="https://images.unsplash.com/photo-1579154341098-e4e158cc7f55?w=600" alt="Cancer Awareness">
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box"><h3>12</h3><p>Kampanye Aktif</p></div>
+                <div class="stat-box"><h3>Rp 450jt</h3><p>Dana Terkumpul</p></div>
+                <div class="stat-box"><h3>1.200</h3><p>Donatur Baik</p></div>
+            </div>
+
+            <h2 class="section-title">Pilih Kampanye Donasi</h2>
+            <div class="campaign-container" id="campaign-list">
+                </div>
+        </section>
+
+        <section id="donasi" class="page-section">
+            <div class="form-wrapper">
+                <h2>Formulir Donasi</h2>
+                <form id="form-donasi">
+                    <div class="form-group">
+                        <label>Nama Donatur</label>
+                        <input type="text" id="donasi-nama" placeholder="Masukkan nama lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nominal Donasi (Rp)</label>
+                        <input type="number" id="donasi-nominal" placeholder="Contoh: 50000" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Metode Pembayaran</label>
+                        <select id="donasi-metode">
+                            <option value="Transfer Bank">Transfer Bank</option>
+                            <option value="E-Wallet">E-Wallet (GoPay/OVO)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Kirim Donasi</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="relawan" class="page-section">
+            <div class="form-wrapper">
+                <h2>Daftar Jadi Relawan</h2>
+                <p style="text-align: center; margin-bottom: 20px;">Bergabunglah dengan tim kami untuk membantu sesama.</p>
+                <form id="form-relawan">
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label>Nama Lengkap</label>
+                            <input type="text" id="relawan-nama" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="relawan-email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Bidang Keahlian</label>
+                        <select id="relawan-skill">
+                            <option value="Kesehatan">Kesehatan / Medis</option>
+                            <option value="Sosial">Pendampingan Sosial</option>
+                            <option value="Admin">Administrasi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Motivasi</label>
+                        <textarea id="relawan-pesan" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Daftar Sekarang</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="admin" class="page-section">
+            <div class="admin-card">
+                <div class="admin-header">
+                    <h2>Kelola Data Kampanye</h2>
+                    <button class="btn-add" id="open-add-modal">Tambah Kampanye</button>
+                </div>
+                <table class="table-data">
+                    <thead>
+                        <tr>
+                            <th>Judul</th>
+                            <th>Target Dana</th>
+                            <th>Terkumpul</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-table-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CharityConnect - Project Pengembangan Web UAS</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
