@@ -64,10 +64,9 @@
             <div class="card-form">
                 <h2>Pendaftaran Relawan</h2>
                 <form id="form-relawan">
-                    <div class="form-group">
-                        <label>Nama Lengkap</label>
-                        <input type="text" id="r-nama" required>
-                    </div>
+                    <div class="form-group"><label>Nama Lengkap</label><input type="text" id="r-nama" required></div>
+                    <div class="form-group"><label>Nomor Telepon (WA)</label><input type="tel" id="r-phone" required></div>
+                    <div class="form-group"><label>Email Aktif</label><input type="email" id="r-email" required></div>
                     <div class="form-group">
                         <label>Bidang Keahlian</label>
                         <select id="r-skill">
@@ -76,7 +75,7 @@
                             <option value="Umum">Logistik & Umum</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn-submit btn-teal">Gabung Sekarang</button>
+                    <button type="submit" class="btn-submit">Gabung Sekarang</button>
                 </form>
             </div>
         </section>
@@ -94,9 +93,7 @@
             <div class="table-box">
                 <div class="table-title">Manajemen Kampanye</div>
                 <table class="modern-table">
-                    <thead>
-                        <tr><th>Judul</th><th>Target</th><th>Terkumpul</th><th>Aksi</th></tr>
-                    </thead>
+                    <thead><tr><th>Judul</th><th>Target</th><th>Terkumpul</th><th>Aksi</th></tr></thead>
                     <tbody id="admin-table"></tbody>
                 </table>
             </div>
@@ -104,9 +101,7 @@
             <div class="table-box">
                 <div class="table-title">Log Transaksi Donasi</div>
                 <table class="modern-table">
-                    <thead>
-                        <tr><th>Donatur</th><th>Tujuan</th><th>Jumlah</th><th>Aksi</th></tr>
-                    </thead>
+                    <thead><tr><th>Donatur</th><th>Tujuan</th><th>Jumlah</th><th>Aksi</th></tr></thead>
                     <tbody id="donatur-table"></tbody>
                 </table>
             </div>
@@ -114,21 +109,12 @@
             <div class="table-box">
                 <div class="table-title">Database Relawan</div>
                 <table class="modern-table">
-                    <thead>
-                        <tr><th>Nama</th><th>Keahlian</th><th>Aksi</th></tr>
-                    </thead>
+                    <thead><tr><th>Nama Relawan</th><th>Kontak</th><th>Keahlian</th><th>Aksi</th></tr></thead>
                     <tbody id="relawan-table"></tbody>
                 </table>
             </div>
         </section>
     </main>
-
-    <footer class="main-footer">
-        <div class="footer-grid">
-            <div class="logo">Care<span>Unity</span></div>
-            <p>&copy; 2026 CareUnity. Hak Cipta Dilindungi.</p>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
