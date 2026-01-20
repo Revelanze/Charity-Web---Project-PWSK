@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareUnity | Platform Donasi Kanker 2026</title>
+    <title>CareUnity | Platform Donasi Terintegrasi</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -28,22 +28,15 @@
             <div class="hero-box">
                 <div class="hero-text">
                     <h1>Bantu Mereka <br><span class="text-teal">Melawan Kanker</span></h1>
-                    <p>Salurkan bantuan medis dan dukungan psikologis secara transparan bagi pejuang kanker di seluruh Indonesia.</p>
-                    <div class="hero-actions">
-                        <button class="btn-main" onclick="app.navigateTo('donasi')">Donasi Sekarang</button>
-                    </div>
+                    <p>Wujudkan harapan bagi para pejuang kanker melalui donasi transparan dan dukungan relawan yang tulus.</p>
+                    <button class="btn-main" onclick="app.navigateTo('donasi')">Donasi Sekarang</button>
                 </div>
                 <div class="hero-img-container">
-                    <img src="https://awsimages.detik.net.id/community/media/visual/2024/02/19/pemberian-makan-siang-gratis-ke-anak-dalam-rangka-memperingati-hari-kanker-anak-di-rs-murni-teguh-medan-foto-dok-smiling-kids-_169.jpeg?w=1200" alt="Hero Image">
+                    <img src="https://awsimages.detik.net.id/community/media/visual/2022/08/25/dok-berbuat-baikid-2.jpeg?w=1280" alt="Hero">
                 </div>
             </div>
-
-            <div class="section-heading">
-                <h2>Kampanye Aktif</h2>
-                <p>Klik pada kampanye untuk membantu mereka hari ini.</p>
-            </div>
-            <div class="campaign-grid" id="campaign-list">
-                </div>
+            <div class="section-heading"><h2>Kampanye Kemanusiaan</h2></div>
+            <div class="campaign-grid" id="campaign-list"></div>
         </section>
 
         <section id="page-donasi" class="page">
@@ -51,61 +44,80 @@
                 <h2>Formulir Donasi</h2>
                 <form id="form-donasi">
                     <div class="form-group">
+                        <label>Pilih Kampanye Tujuan</label>
+                        <select id="d-target-camp" required></select>
+                    </div>
+                    <div class="form-group">
                         <label>Nama Donatur</label>
-                        <input type="text" id="d-nama" placeholder="Masukkan nama lengkap" required>
+                        <input type="text" id="d-nama" placeholder="Nama Anda" required>
                     </div>
                     <div class="form-group">
                         <label>Nominal (Rp)</label>
                         <input type="number" id="d-jumlah" placeholder="Contoh: 50000" required>
                     </div>
-                    <button type="submit" class="btn-submit">Kirim Donasi Aman</button>
+                    <button type="submit" class="btn-submit">Konfirmasi Donasi</button>
                 </form>
             </div>
         </section>
 
         <section id="page-relawan" class="page">
             <div class="card-form">
-                <h2>Gabung Relawan</h2>
+                <h2>Pendaftaran Relawan</h2>
                 <form id="form-relawan">
                     <div class="form-group">
                         <label>Nama Lengkap</label>
                         <input type="text" id="r-nama" required>
                     </div>
                     <div class="form-group">
-                        <label>Keahlian</label>
+                        <label>Bidang Keahlian</label>
                         <select id="r-skill">
                             <option value="Medis">Tenaga Medis</option>
-                            <option value="Sosial">Pendampingan Sosial</option>
-                            <option value="Dokumentasi">Dokumentasi</option>
+                            <option value="Sosial">Pendampingan Psikososial</option>
+                            <option value="Umum">Logistik & Umum</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn-submit btn-teal">Daftar Sekarang</button>
+                    <button type="submit" class="btn-submit btn-teal">Gabung Sekarang</button>
                 </form>
             </div>
         </section>
 
         <section id="page-admin" class="page">
             <div class="admin-header">
-                <h2>Manajemen Kampanye</h2>
-                <button class="btn-add" id="add-btn"> + Tambah Data</button>
+                <h2>Dashboard Kendali Admin</h2>
+                <button class="btn-add" id="add-btn">+ Buat Kampanye</button>
             </div>
             <div class="admin-stats">
-                <div class="stat-item">Total: <span id="stat-count">0</span></div>
-                <div class="stat-item">Terkumpul: <span id="stat-sum">Rp 0</span></div>
+                <div class="stat-item">Program Aktif: <span id="stat-count">0</span></div>
+                <div class="stat-item">Total Dana: <span id="stat-sum">Rp 0</span></div>
             </div>
+
             <div class="table-box">
+                <div class="table-title">Manajemen Kampanye</div>
                 <table class="modern-table">
                     <thead>
-                        <tr>
-                            <th>Preview</th>
-                            <th>Judul</th>
-                            <th>Target</th>
-                            <th>Terkumpul</th>
-                            <th>Aksi</th>
-                        </tr>
+                        <tr><th>Judul</th><th>Target</th><th>Terkumpul</th><th>Aksi</th></tr>
                     </thead>
-                    <tbody id="admin-table">
-                        </tbody>
+                    <tbody id="admin-table"></tbody>
+                </table>
+            </div>
+
+            <div class="table-box">
+                <div class="table-title">Log Transaksi Donasi</div>
+                <table class="modern-table">
+                    <thead>
+                        <tr><th>Donatur</th><th>Tujuan</th><th>Jumlah</th><th>Aksi</th></tr>
+                    </thead>
+                    <tbody id="donatur-table"></tbody>
+                </table>
+            </div>
+
+            <div class="table-box">
+                <div class="table-title">Database Relawan</div>
+                <table class="modern-table">
+                    <thead>
+                        <tr><th>Nama</th><th>Keahlian</th><th>Aksi</th></tr>
+                    </thead>
+                    <tbody id="relawan-table"></tbody>
                 </table>
             </div>
         </section>
@@ -113,18 +125,8 @@
 
     <footer class="main-footer">
         <div class="footer-grid">
-            <div class="footer-brand">
-                <div class="logo">Care<span>Unity</span></div>
-                <p>Membangun harapan sejak 2024.</p>
-            </div>
-            <div class="footer-socials">
-                <a href="#">Instagram</a>
-                <a href="#">Twitter/X</a>
-                <a href="#">Facebook</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 CareUnity. Hak Cipta Dilindungi.
+            <div class="logo">Care<span>Unity</span></div>
+            <p>&copy; 2026 CareUnity. Hak Cipta Dilindungi.</p>
         </div>
     </footer>
 
